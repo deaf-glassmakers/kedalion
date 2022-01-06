@@ -1,0 +1,24 @@
+{
+  "name": "kedalion",
+  "version": "1.0.0",
+  "description": "common tools for devs as a package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deaf-glassmakers/kedalion.git"
+  },
+  "keywords": [
+    "tools",
+    "toolkit",
+    "dev"
+  ],
+  "author": "\"cosmoglint\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deaf-glassmakers/kedalion/issues"
+  },
+  "homepage": "https://github.com/deaf-glassmakers/kedalion#readme"
+}
