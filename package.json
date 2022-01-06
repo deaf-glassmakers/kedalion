@@ -4,7 +4,8 @@
   "description": "common tools for devs as a package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/deaf-glassmakers/kedalion/issues"
   },
-  "homepage": "https://github.com/deaf-glassmakers/kedalion#readme"
+  "homepage": "https://github.com/deaf-glassmakers/kedalion#readme",
+  "devDependencies": {
+    "electron": "^16.0.6"
+  }
 }
