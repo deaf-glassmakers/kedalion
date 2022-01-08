@@ -10,7 +10,8 @@ function createWindow(){
     }
   })
 
-  win.loadFile('index.html')
+  // win.loadFile('index.html')
+  win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
 }
 
 
@@ -28,4 +29,3 @@ app.whenReady().then(() => {
 app.on('window.all.closed', function(){
   if (process.platform !== 'darwin') app.quit()
 })
-
