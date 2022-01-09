@@ -1,0 +1,36 @@
+/* css resets for removing some default values */
+html, body, head, div, title, p, h1, h2, h3 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#workstation {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+#toolbox {
+  width: 50px;
+}
+
+#process {
+  width: fill;
+  flex-grow: 1;
+}
+

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/deaf-glassmakers/kedalion#readme",
   "devDependencies": {
-    "electron": "^16.0.6"
+    "electron": "^16.0.6",
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }
