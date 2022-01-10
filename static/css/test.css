@@ -25,26 +25,21 @@ body {
 }
 
 #workstation {
-  display: flex;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  flex: auto;
-  width: 100%;
+  display: flex;
+}
+
+#toolbox {
+  width: 20px;
+  flex:1
+}
+
+#process {
+  flex: 1;
 }
 
 #header {
   flex: none;
-  width: 100%;
-}
-
-#toolbox {
-  width: 50px;
-}
-
-#process {
-  width: fill;
-  flex-grow: 5;
-  flex: 1;
 }
 
 #footer {
