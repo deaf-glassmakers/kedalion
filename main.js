@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+require('electron-reload')(__dirname);
 function createWindow(){
   const win = new BrowserWindow({
     width: 500,
@@ -11,6 +12,8 @@ function createWindow(){
   })
 
   win.loadFile('index.html')
+  win.webContents.openDevTools();
+  // win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
 }
 
 
@@ -28,4 +31,3 @@ app.whenReady().then(() => {
 app.on('window.all.closed', function(){
   if (process.platform !== 'darwin') app.quit()
 })
-
