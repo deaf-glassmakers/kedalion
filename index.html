@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' blob:; script-src 'self' 'unsafe-inline' blob:; img-src 'self' data:;">
-<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
 <title>ACE in Action</title>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
 </head>
 <body>
 
@@ -15,6 +20,10 @@
 }</div>
     
 <script src="./libraries/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="./static/js/renderer.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+</script>
 </body>
 </html>
