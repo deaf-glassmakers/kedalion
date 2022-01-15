@@ -30,8 +30,7 @@ body {
 }
 
 #toolbox {
-  width: 20px;
-  flex:1
+  width: 20vw;
 }
 
 #process {

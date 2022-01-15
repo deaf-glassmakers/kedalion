@@ -11,7 +11,7 @@ function createWindow(){
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('./index.html')
   win.webContents.openDevTools();
   // win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
 }
