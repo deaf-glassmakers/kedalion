@@ -39,8 +39,14 @@ body {
         }
 #workstation {
   height: 100%;
+  display: flex;
 }
 
-#editor {
+#new_editor {
   height: 100%;
+  width: 50%;
+}
+#old_editor {
+  height: 100%;
+  width:50%;
 }
