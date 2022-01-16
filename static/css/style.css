@@ -34,9 +34,8 @@ body {
             bottom: 0;
             z-index: 10;
             width: 100%;
-            /* Height of the footer*/ 
             height: 20px;
-            background: grey;
+            background: white;
         }
 #workstation {
   height: 100%;
