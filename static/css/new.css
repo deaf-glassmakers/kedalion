@@ -1,4 +1,4 @@
-/* css resets for removing some default values */
+
 html, body, head, div, title, p, h1, h2, h3 {
   margin: 0;
   border: 0;
@@ -20,35 +20,28 @@ body {
 }
 
 #content {
-  display: flex;
-  postition:absolute;
-  min-height: 100%;
-  align-self: stretch;
+  position: absolute;
   height: 100%;
-  flex-direction: column;
-}
-
-#workstation {
-  display: flex;
-  flex: 1;
-}
-
-#toolbox {
-  max-width: 20vw;
-}
-
-#process {
-  flex: 1;
-}
-
-#editor { 
-  flex: 1;
-  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #header {
-  height: 30px;
+  height: 20px;
+}
+#footer {
+            position: fixed;
+            bottom: 0;
+            z-index: 10;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 20px;
+            background: grey;
+        }
+#workstation {
+  height: 100%;
 }
 
-#footer {
+#editor {
+  height: 100%;
 }
