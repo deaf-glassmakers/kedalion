@@ -1,4 +1,4 @@
-// this is the file that will act as the main renderer process. Honestly some of this stuff doesnt make sense. till then hold on
+// this is the file that will act as the  renderer process. Honestly some of this stuff doesnt make sense. till then hold on
 
 
 
@@ -12,9 +12,15 @@ var new_editor = ace.edit("new_editor");
 new_editor.setTheme("ace/theme/monokai");
 new_editor.session.setMode("ace/mode/javascript");
 
+function findDiff(){
+  // to do handle every change event and update the diff as necessary
+  old_text = old_editor.getSession().getValue();
+  new_text = new_editor.getSession().getValue();
+  console.log(old_text)
+  console.log(new_text)
+}
+
 new_editor.addEventListener('click', () => {
-  console.log('clicked')
     window.api.send("test", "testdataaaaaa")
 })
-console.log('test')
 

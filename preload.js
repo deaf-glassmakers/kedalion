@@ -11,6 +11,9 @@ contextBridge.exposeInMainWorld(
     recieve:(channel, func) => {
       ipcRenderer.on(channel, (event, ...args) => fn(...args));
     }
+  },
+  "diff", {
+
   }
 );
 

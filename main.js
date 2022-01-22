@@ -28,6 +28,7 @@ app.whenReady().then(() => {
 
 
 ipcMain.on('test', function(e, data){
+  console.log("tested successfully")
 })
 
 

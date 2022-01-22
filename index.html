@@ -16,16 +16,10 @@
       <div id='workstation'>
         <!-- <div id='toolbox'>this is the toolbox</div> disabling this for now-->
         <div id="old_editor">//this is the original content</div>
-        <div id="new_editor">//this is the changed content</div>
+        <div id="new_editor"  onChange="findDiff()" >//this is the changed content</div>
         <script src="./libraries/ace.js" type="text/javascript" charset="utf-8"></script>
         <script src="./static/js/renderer.js" type="text/javascript" charset="utf-8"></script>
         <script>
-            var old_editor = ace.edit("old_editor");
-            old_editor.setTheme("ace/theme/monokai");
-            old_editor.session.setMode("ace/mode/javascript");
-            var new_editor = ace.edit("new_editor");
-            new_editor.setTheme("ace/theme/monokai");
-            new_editor.session.setMode("ace/mode/javascript");
         </script>
       </div>
       <!-- <div id='footer'>fooooooooooter</div> -->
