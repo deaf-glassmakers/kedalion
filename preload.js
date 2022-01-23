@@ -3,6 +3,10 @@ const {
     ipcRenderer
 } = require("electron");
 
+const Diff = require("diff");
+
+
+
 contextBridge.exposeInMainWorld(
   "api", {
     send: (channel, data) => {
@@ -11,9 +15,17 @@ contextBridge.exposeInMainWorld(
     recieve:(channel, func) => {
       ipcRenderer.on(channel, (event, ...args) => fn(...args));
     }
-  },
-  "diff", {
-
   }
 );
 
+
+contextBridge.exposeInMainWorld(
+  "diff", {
+    diffChars: (old_text, new_text) => {
+      return Diff.diffChars(old_text, new_text);
+    },
+    diffSentences: (old_text, new_text) => {
+      return Diff.diffSentences(old_text, new_text);
+    }
+  }
+);
