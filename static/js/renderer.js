@@ -61,28 +61,29 @@ function parseLine(previous_lists, instance){
 }
 
 function parseLists(old_list, new_list){
-  for (let i=0; i<old_list.length; i++){
-    old_val = old_list[i]
-    new_val = new_list[i]
-    diff_list = window.diff.diffChars(old_val, new_val)
-    previous_lists = {old_count:0, new_count:0 }
+  let largn = Math.max(old_list.length, new_list.length)
+  for (let i=0; i<largn; i++){
+    let old_val = (i < old_list.length) ? old_list[i] : ""
+    let new_val = (i < new_list.length) ? new_list[i] : ""
+    let diff_list = window.diff.diffChars(old_val, new_val)
+    console.log(diff_list)
+    let previous_lists = {old_count:0, new_count:0 }
     diff_list.forEach((instance) => {
       old_count = previous_lists.old_count
       new_count = previous_lists.new_count
       value = instance.value;
       count = instance.count;
-      new_instance = { old_count:old_count, new_count:new_count }
       if (instance.added == undefined && instance.removed == undefined){
-        new_instance.old_count += count
-        new_instance.new_count += count
+        previous_lists.old_count += count
+        previous_lists.new_count += count
       }
       else if (instance.added == undefined){
-        old_editor.session.addMarker(new Range(i,new_count,i,old_count+count), "red", "text")
-        new_instance.new_count += count
+        old_editor.session.addMarker(new Range(i,old_count,i,old_count+count), "red", "text")
+        previous_lists.old_count += count
       }
       else if ( instance.removed == undefined){
-        new_editor.session.addMarker(new Range(i,old_count,i,old_count+count), "green", "text")
-        new_instance.new_count += count
+        new_editor.session.addMarker(new Range(i,new_count,i,new_count+count), "green", "text")
+        previous_lists.new_count += count
       }
     })
   }
@@ -96,6 +97,7 @@ function findDiff(){
   let new_ll = new_editor.getSession().doc.getAllLines();
 
   //diff_list = window.diff.diffChars(old_text, new_text)
+  //console.log(diff_list)
   //diff_list = window.diff.diffSentences(old_text, new_text)
   parseLists(old_ll, new_ll)
   // let { original_list, updated_list } = diff_list.reduce(parseDiff, {original_list: [], updated_list: [], original_count:0, updated_count:0, column_count: 0, row_count: 0});
@@ -103,3 +105,4 @@ function findDiff(){
 }
 
 new_editor.on("change", findDiff)
+old_editor.on("change", findDiff)
