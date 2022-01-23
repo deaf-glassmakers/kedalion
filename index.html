@@ -4,21 +4,25 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' blob:; script-src 'self' 'unsafe-inline' blob:; img-src 'self' data:;">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Kedalion</title>
-    <link rel='stylesheet' href='./static/css/test.css'>
+    <link rel='stylesheet' href='./static/css/style.css'>
 
   </head>
   <body>
     <div id='content'> 
-      <div id='header'>this is header</div>
+      <!-- <div id='header'>this is friggin header</div> -->
       <div id='workstation'>
-        <div id='toolbox'>this is the toolbox</div>
-        <div class='process'>this is the process window</div>
+        <!-- <div id='toolbox'>this is the toolbox</div> disabling this for now-->
+        <div id="old_editor">//this is the original content</div>
+        <div id="new_editor"  >//this is the changed content</div>
+        <script src="./libraries/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./static/js/renderer.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        </script>
       </div>
-      <div id='footer'>fooooooooooter</div>
+      <!-- <div id='footer'>fooooooooooter</div> -->
     </div>
-    <!-- <script src="./renderer.js"></script> -->
   </body>
 </html>
