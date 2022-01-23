@@ -74,6 +74,8 @@ function parseLists(old_list, new_list){
       value = instance.value;
       count = instance.count;
       if (instance.added == undefined && instance.removed == undefined){
+        old_editor.session.addMarker(new Range(i,old_count,i,old_count+count), "similar", "text")
+        new_editor.session.addMarker(new Range(i,new_count,i,new_count+count), "similar", "text")
         previous_lists.old_count += count
         previous_lists.new_count += count
       }
