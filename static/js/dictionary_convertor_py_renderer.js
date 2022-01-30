@@ -3,13 +3,13 @@
 var Range = ace.require('ace/range').Range;
 
 var js_editor = ace.edit("old_editor");
-js_editor.setTheme("ace/theme/monokai");
+js_editor.setTheme("ace/theme/tomorrow");
 js_editor.session.setMode("ace/mode/javascript");
 
 
 
 var python_editor = ace.edit("new_editor");
-python_editor.setTheme("ace/theme/monokai");
+python_editor.setTheme("ace/theme/tomorrow");
 python_editor.session.setMode("ace/mode/python");
 
 
