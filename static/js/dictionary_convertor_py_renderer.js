@@ -18,6 +18,7 @@ function findDiff(){
   old_text = js_editor.getSession().getValue();
   python_text = convertToPythonDictionary(old_text)
   python_editor.setValue(python_text)
+  console.log("changed")
 }
 
 js_editor.on("change", findDiff)
