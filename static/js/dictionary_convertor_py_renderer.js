@@ -14,19 +14,23 @@ python_editor.session.setMode("ace/mode/python");
 
 
 
-function convertToPythonDictionary(){
-  old_text = js_editor.getSession().getValue();
-  python_text = convertToPythonDictionary(old_text)
-  python_editor.setValue(python_text)
-  console.log("changed")
+function setValueToPythonDictionary(){
+  var elem = document.activeElement;
+  if (js_editor.isFocused()){
+    old_text = js_editor.getSession().getValue();
+    python_text = convertToPythonDictionary(old_text)
+    python_editor.setValue(python_text)
+  }
 }
 
-function convertToJson(){
-  old_text = python_editor.getSession().getValue();
-  js_text = convertToJson(old_text)
-  js_editor.setValue(js_text)
-  console.log("changed")
+function setValueToJson(){
+  var elem = document.activeElement;
+  if (python_editor.isFocused()){
+    old_text = python_editor.getSession().getValue();
+    js_text = convertToJson(old_text)
+    js_editor.setValue(js_text)
+  }
 }
 
-js_editor.on("change", convertToPythonDictionary)
-python_editor.on("change", convertToJson)
+js_editor.on("change", setValueToPythonDictionary)
+python_editor.on("change", setValueToJson)
