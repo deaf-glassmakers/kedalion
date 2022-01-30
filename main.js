@@ -21,7 +21,6 @@ const menuTemplate = [
   }
 ]
 
-
 const menu = Menu.buildFromTemplate(menuTemplate);
 Menu.setApplicationMenu(menu)
 
@@ -30,8 +29,8 @@ Menu.setApplicationMenu(menu)
 
 function createWindow(){
   const win = new BrowserWindow({
-    width: 500,
-    height: 500,
+    width: 1000,
+    height: 1000,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     }

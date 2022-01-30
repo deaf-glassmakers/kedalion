@@ -1,3 +1,5 @@
+
+// parses a given diff list and adds marks at the required locations
 let parseLine = (previous_lists, instance) => {
   original_list = previous_lists.original_list
   updated_list = previous_lists.updated_list
@@ -20,6 +22,7 @@ let parseLine = (previous_lists, instance) => {
 
 }
 
+// given two lists wil generate the necessary difflist and calls the parse line function for each line
 let parseLists = (old_list, new_list) => {
   let largn = Math.max(old_list.length, new_list.length)
   for (let i=0; i<largn; i++){
@@ -48,4 +51,13 @@ let parseLists = (old_list, new_list) => {
       }
     })
   }
+}
+
+
+
+// naiive json to python dictionary assuming that the format is already in structured json
+let convertToPythonDictionary = (value) => {
+  value = value.replace(/true/g, "True")
+  value = value.replace(/false/g, "False")
+  return value
 }
