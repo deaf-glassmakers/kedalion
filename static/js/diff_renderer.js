@@ -15,7 +15,6 @@ new_editor.session.setMode("ace/mode/javascript");
 
 
 function findDiff(){
-  // to do handle every change event and update the diff as necessary
   old_text = old_editor.getSession().getValue();
   new_text = new_editor.getSession().getValue();
   let old_ll = old_editor.getSession().doc.getAllLines();

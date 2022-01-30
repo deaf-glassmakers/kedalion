@@ -1,7 +1,33 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { Menu, app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
 require('electron-reload')(__dirname);
+
+const isMac = process.platform === 'darwin'
+
+const menuTemplate = [
+  {
+    label: app.name,
+    submenu: [
+      {
+        label: "Diff",
+        click: () => {console.log("diffbro")},
+      },
+      {
+        label: "Dictionary convertor",
+        click: () => {console.log("this converts dictionaries")},
+      },
+    ],
+  }
+]
+
+
+const menu = Menu.buildFromTemplate(menuTemplate);
+Menu.setApplicationMenu(menu)
+
+
+
+
 function createWindow(){
   const win = new BrowserWindow({
     width: 500,
@@ -11,7 +37,7 @@ function createWindow(){
     }
   })
 
-  win.loadFile('./index.html')
+  win.loadFile('./static/html/diff.html')
   win.webContents.openDevTools();
   // win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
 }
