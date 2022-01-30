@@ -61,3 +61,12 @@ let convertToPythonDictionary = (value) => {
   value = value.replace(/false/g, "False")
   return value
 }
+
+// naiive conversion from pydict to json
+let convertToPythonDictionary = (value) => {
+  value = value.replace(/True/g, "true")
+  value = value.replace(/False/g, "false")
+  value = value.replace(/\'/g, "\"")
+  value = value.replace(/false/g, "False")
+  return value
+}
