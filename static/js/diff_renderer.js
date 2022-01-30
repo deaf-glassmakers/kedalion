@@ -3,19 +3,18 @@
 var Range = ace.require('ace/range').Range;
 
 var old_editor = ace.edit("old_editor");
-old_editor.setTheme("ace/theme/monokai");
-old_editor.session.setMode("ace/mode/javascript");
+old_editor.setTheme("ace/theme/tomorrow_night");
+old_editor.session.setMode("ace/mode/plain_text");
 
 
 
 var new_editor = ace.edit("new_editor");
-new_editor.setTheme("ace/theme/monokai");
-new_editor.session.setMode("ace/mode/javascript");
+new_editor.setTheme("ace/theme/tomorrow_night");
+new_editor.session.setMode("ace/mode/plain_text");
 
 
 
 function findDiff(){
-  // to do handle every change event and update the diff as necessary
   old_text = old_editor.getSession().getValue();
   new_text = new_editor.getSession().getValue();
   let old_ll = old_editor.getSession().doc.getAllLines();
