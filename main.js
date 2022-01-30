@@ -22,7 +22,7 @@ const menuTemplate = [
 ]
 
 const menu = Menu.buildFromTemplate(menuTemplate);
-Menu.setApplicationMenu(menu)
+//Menu.setApplicationMenu(menu)
 
 
 
@@ -36,7 +36,7 @@ function createWindow(){
     }
   })
 
-  win.loadFile('./static/html/diff.html')
+  win.loadFile('./static/html/dictionary_convertor_py.html')
   win.webContents.openDevTools();
   // win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
 }

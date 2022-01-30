@@ -10,7 +10,7 @@ js_editor.session.setMode("ace/mode/javascript");
 
 var python_editor = ace.edit("new_editor");
 python_editor.setTheme("ace/theme/monokai");
-python_editor.session.setMode("ace/mode/javascript");
+python_editor.session.setMode("ace/mode/python");
 
 
 
