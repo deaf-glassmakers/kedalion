@@ -140,9 +140,22 @@ function createDiffWindow(){
   // win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
 }
 
+function createTestWindow(){
+  const win = new BrowserWindow({
+    width: 1000,
+    height: 1000,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    }
+  })
+
+  win.loadFile('./static/html/test.html')
+  //win.webContents.openDevTools();
+  // win.loadURL(`https://cosmoglint.github.io/art_with_javascript/`)
+}
 
 app.whenReady().then(() => {
-  createDiffWindow()
+  createTestWindow()
 
 // for mac systems dont stop the app and let it run on the background. create a new window when the app button is clicked
   app.on('activate', function(){
